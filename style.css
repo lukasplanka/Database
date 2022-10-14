@@ -1,0 +1,83 @@
+body {
+    padding: 10px;
+    background-color: #3c3f49;
+    color: white;
+    font-family: monospace;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type='text'] {
+    width: 200px;
+}
+
+input[type='submit'] {
+    width: 214px;
+    transition: .3s;
+    border: 3px solid lightgreen;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type='submit']:hover {
+    background-color: lightgreen;
+}
+
+input, button {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.to-list {
+    width: 214px;
+    border: 3px solid lightskyblue;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.to-list:hover {
+    background-color: lightskyblue;
+}
+
+.list-names {
+    border-top: 1px solid white;
+    margin-top: 20px;
+}
+
+.list-names > div {
+    width: 260px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.list-names button {
+    transition: .3s;
+    border: 3px solid lightcoral;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.list-names button:hover {
+    background-color: lightcoral;
+}
+
+.list-names p {
+    overflow: auto;
+}
+
+#test-form {
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}

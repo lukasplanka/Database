@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Databáza</title>
+</head>
+<body>
+    <h1>Databáza osôb</h1>
+    <h2>Pridať osobu do databázy</h2>
+    <form id="test-form">
+        <input type="text" name="firstName" placeholder="Krstné meno" required><br/>
+        <input type="text" name="secondName" placeholder="Priezvisko" required><br/>
+        <input type="text" name="crime" placeholder="Zločin" required><br/>
+        <input type="submit" value="Pridať osobu">
+    </form>
+
+    <button class="to-list"><i class="fa-solid fa-users"></i> Výpis osôb z databázy</button><br/>
+ 
+    <h2>Filtrovať osobu podľa mena/priezviska/zločinu/ID</h2>
+    <input type="text" class="name-filter">
+
+    <div class="list-names">
+
+    </div>
+</body>
+<script src="uuidv4.js"></script>
+<script src="script.js"></script>
+</html>
