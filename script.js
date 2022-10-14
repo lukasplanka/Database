@@ -1,5 +1,4 @@
-// nacitanie dat z localStorage do premennej names
-// ak je localStorage prazdne, do names sa ulozi prazdne pole
+// loading from localStorage
 const getSavedNames = () => {
     const myNames = localStorage.getItem('names')
 
@@ -9,14 +8,15 @@ const getSavedNames = () => {
         return []
     }
 }
+
 let names = getSavedNames()
 
-// ukladanie do localStorage z inputov
+// saveing from inputs to localStorage
 const saveNames = (oneName) => {
     localStorage.setItem('names', JSON.stringify(oneName))
 }
 
-// odoslanie formulara a ulozenie do localStorage
+// submitting the form and saving it to localStorage
 let myForm = document.querySelector('#test-form')
 
 myForm.addEventListener('submit', (event) => {
@@ -36,8 +36,8 @@ myForm.addEventListener('submit', (event) => {
     saveNames(names)
 })
 
-// generovanie HTML struktury po kliknuti
-// vypisanie novych mien po vymazani
+// generation of HTML structure after clicking
+// listing new names after deletion
 const generateHTMLstructure = (oneName) => {
     
     const newDiv = document.createElement('div')
@@ -53,7 +53,7 @@ const generateHTMLstructure = (oneName) => {
     
     newDiv.appendChild(newParagraph)
 
-    // nastavenie mazacieho tlacitka
+    // grease button setting
     button.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Vymazať osobu`
     newParagraph.appendChild(button)
 
@@ -66,14 +66,13 @@ const generateHTMLstructure = (oneName) => {
     return newDiv
 }
 
-// vypisovanie na stranku
+// listing on the page
 let buttonToList = document.querySelector('.to-list')
 buttonToList.addEventListener('click', () => {
 
     if (localStorage.getItem('names') == null){
         alert('Databáza je prázdna.')
     } else {
-        // vycisti div
         document.querySelector('.list-names').innerHTML = ''
         
         let namesFromStorage = localStorage.getItem('names')
@@ -86,19 +85,18 @@ buttonToList.addEventListener('click', () => {
     }
 })
 
-// podla id najdeme meno a odstranime
+// filtering by id
 const removeNames = (ourNames, id) => {
     const index = ourNames.findIndex((nameWantToCheck) => {
         return nameWantToCheck.id === id
     })
 
-    // -1 preto lebo ak to nenajde vrati to -1 inak to vrati nejaky index mena
     if (index > -1){
         ourNames.splice(index, 1)
     }
 }
 
-// znovu vypisanie localStorage ked sa uzivatel zmaze
+// rewriting localStorage after deleting a user
 const toListAgain = () => {
     document.querySelector('.list-names').innerHTML = ''
 
@@ -110,7 +108,7 @@ const toListAgain = () => {
     });
 }
 
-// filtrovanie
+// filtering
 let nameFilter = document.querySelector('.name-filter')
 
 nameFilter.addEventListener('input', function(event){
